@@ -4,6 +4,7 @@
 The Waze Churn Analysis Project focuses on understanding user churn, aiming to identify patterns and behaviors that contribute to users discontinuing the use of the Waze app. Churn analysis is crucial to improve retention, understand user needs, and ultimately provide a better user experience. This project, part of a data analytics course, involves the inspection, cleaning, and analysis of Waze user data to extract meaningful insights about churn.
 
 The primary objectives of this project include:
+
 • Cleaning and preparing Waze user data for analysis.
 • Exploring and analyzing data to answer key business questions about user churn.
 • Visualizing trends and behavior patterns related to user churn to provide actionable insights.
