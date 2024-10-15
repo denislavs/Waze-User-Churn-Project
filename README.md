@@ -4,7 +4,6 @@
 The Waze Churn Analysis Project focuses on understanding user churn, aiming to identify patterns and behaviors that contribute to users discontinuing the use of the Waze app. Churn analysis is crucial to improve retention, understand user needs, and ultimately provide a better user experience. This project, part of a data analytics course, involves the inspection, cleaning, and analysis of Waze user data to extract meaningful insights about churn.
 
 The primary objectives of this project include:
-
 • Cleaning and preparing Waze user data for analysis.
 • Exploring and analyzing data to answer key business questions about user churn.
 • Visualizing trends and behavior patterns related to user churn to provide actionable insights.
@@ -41,28 +40,34 @@ Users with lower engagement, specifically those who used the app less frequently
 There was a notable difference in churn behavior between iPhone and Android users. The analysis showed that iPhone users constituted a larger share of both the overall user base and the users with missing values.
 
 The number of users with missing data is higher among iPhone users than Android users, as shown in the bar chart below:
+
 ![output_24_0](https://github.com/user-attachments/assets/e424c213-b3b6-48f4-a4fe-c503d683e2be)
 
 The comparison of device proportions for the overall dataset and users with missing values indicates that iPhone users are more prevalent in both categories.
+
 ![output_30_0](https://github.com/user-attachments/assets/3cd86b85-0ed3-4717-a33c-501ea6bf75e2)
 
 3.3. Churned vs. Retained Users
 The overall churn rate was 17.7%, with 82.3% of users being retained. This is highlighted in the pie chart below:
+
 ![output_34_0](https://github.com/user-attachments/assets/d6c3e677-7c3b-4bab-b10f-e9544451e712)
 
 3.4. Comparison of User Behaviors Between Churned and Retained Users
 When comparing the median values of various metrics such as kilometers per drive, driving days, and duration per trip, churned users exhibited lower engagement. For instance, churned users had a lower number of drives per driving day and fewer kilometers per driving day. This was visualized using bar plots.
 
 Comparison of median values for key variables between churned and retained users:
+
 ![output_46_0](https://github.com/user-attachments/assets/fb4c238d-e036-4ed3-896e-489c3bbb452e)
 
 Detailed bar charts comparing key driving metrics, such as kilometers per drive, kilometers per driving day, and drives per driving day:
+
 ![output_37_0](https://github.com/user-attachments/assets/09acf8f9-d1d5-43c0-b8f3-dd49e1e433dd)
 
 3.5. Device Share Analysis
 The analysis of device share among churned and retained users showed that iPhone users comprised the majority in both cases, although the proportion of Android users was slightly higher among churned users.
 
 Device share comparison between churned and retained users:
+
 ![output_52_0](https://github.com/user-attachments/assets/f6c1d37e-6b54-456b-a288-af8f91cddd89)
 
 These findings suggest that user engagement, as measured by driving frequency and app usage metrics, is a strong indicator of churn. Additionally, the prevalence of iPhone users in the dataset provides an interesting opportunity for targeted user retention strategies based on device type.
