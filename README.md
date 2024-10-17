@@ -1,34 +1,36 @@
-**Waze Churn Analysis Project**
-
-**1. Introduction**  
-The Waze Churn Analysis Project focuses on understanding user churn, aiming to identify patterns and behaviors that contribute to users discontinuing the use of the Waze app. Churn analysis is crucial to improve retention, understand user needs, and ultimately provide a better user experience. This project, part of Google Advanced Data Analytics Professional Certificate course, involves the inspection, cleaning, and analysis of Waze user data to extract meaningful insights about churn.
-
-The primary objectives of this project include:  
-• Cleaning and preparing Waze user data for analysis.  
-• Exploring and analyzing data to answer key business questions about user churn.  
-• Visualizing trends and behavior patterns related to user churn to provide actionable insights.  
-
-**2. Methodology**  
-The project follows a systematic approach to data analysis:
-
-Tools and Libraries  
-• Python: The programming language used to manipulate and analyze data.  
-• Jupyter Notebook: For interactive analysis and documentation.  
+# Waze User Churn Analysis Project
   
-Python Libraries  
-• Pandas: Used for data cleaning, filtering, and transformation.  
-• Matplotlib and Seaborn: For creating visualizations such as charts, graphs, and plots.  
-• NumPy: For numerical computations and operations.  
-• SciPy: Applied in performing statistical analysis.  
 
-Analytical Approach  
-• Data Cleaning: The dataset was inspected for missing or inconsistent values, and necessary steps were taken to ensure it was suitable for analysis.  
-• Exploratory Data Analysis (EDA): Key aspects of the data were explored, and descriptive statistics were applied to uncover relationships between user engagement, device types, and churn rates. The analysis helped answer the following questions:    
-      Question 1: What are the key factors that correlate with user churn?    
-      Question 2: How do different user behaviors (such as app usage frequency and engagement) relate to churn?  
-• Visualization: A set of visualizations was created to highlight trends and patterns in the dataset, particularly focusing on user behavior differences between retained and churned users.  
+## 1. Introduction 
 
-**3. Findings**  
+This project is part of the Google Advanced Data Analytics Course on Coursera, focusing on user churn within Waze, a popular navigation app. The primary objective is to analyze user behavior and identify patterns that may contribute to user churn. The analysis involves data inspection, preparation, exploratory data analysis (EDA), and visualization to extract actionable insights for improving user retention.
+
+The project helps answer key questions such as:  
+• What are the distinguishing characteristics between users who churn and those who are retained?  
+• How do user behaviors such as app usage frequency, drive distance, and engagement correlate with churn rates?   
+
+## 2. Methodology
+
+**Data Source**  
+The dataset used in this analysis was provided through the Google Data Analytics Course on Coursera. It contains anonymized data on Waze users, including variables related to app usage, engagement, device type, and churn status.  
+
+**Tools and Libraries**  
+• Python: The primary language used for data manipulation, cleaning, and analysis.  
+• Pandas: For handling dataframes and performing data manipulation tasks.  
+• Matplotlib and Seaborn: For creating informative visualizations.  
+• NumPy: For numerical computations.  
+• Jupyter Notebook: For interactive analysis and documenting the code.  
+
+**Analytical Approach**  
+• Data Inspection and Cleaning:   
+The dataset was inspected for missing values, data types, and outliers. Special attention was paid to the distribution of missing data and ensuring that key variables (such as churn status) were ready for analysis.  
+• Exploratory Data Analysis (EDA):   
+Descriptive statistics and visualizations were used to uncover patterns in user behavior, particularly focusing on differences between churned and retained users. Specific variables, such as driving frequency, kilometers driven, and device type, were examined in relation to churn.  
+• Visualization:   
+A series of visualizations were created to represent the distribution of users across devices, engagement levels, and churn status. The goal was to clearly highlight trends and behaviors that could predict churn.    
+
+## 3. Findings  
+
 The analysis yielded important insights into the behavior patterns of churned and retained users. Below are the key findings, supported by various visualizations.
 
 3.1. User Engagement and Churn  
@@ -70,7 +72,7 @@ Device share comparison between churned and retained users:
 
 These findings suggest that user engagement, as measured by driving frequency and app usage metrics, is a strong indicator of churn. Additionally, the prevalence of iPhone users in the dataset provides an interesting opportunity for targeted user retention strategies based on device type.
 
-**4. Conclusion**  
+# 4. Conclusion  
 The Waze Churn Analysis Project successfully met its objectives of cleaning, analyzing, and visualizing Waze user data to understand churn patterns. By applying Python libraries and statistical methods, we were able to identify key factors contributing to churn, such as user engagement and device type.
   
 Summary:  
