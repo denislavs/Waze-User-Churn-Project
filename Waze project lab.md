@@ -1,5 +1,4 @@
 # **Waze Churn Analysis Project**
-**Course 2 - Get Started with Python**
 
 Welcome to the Waze Project!
 
@@ -7,7 +6,7 @@ Your Waze data analytics team is still in the early stages of their user churn p
 
 A Python notebook has been prepared to guide you through this project. Answer the questions and create an executive summary for the Waze data team.
 
-# **Course 2 End-of-course project: Inspect and analyze data**
+# **Inspect and analyze data**
 
 In this activity, you will examine data provided and prepare it for analysis. This activity will help ensure the information is,
 
