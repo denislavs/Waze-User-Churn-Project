@@ -12,7 +12,7 @@ The project answers key questions such as:
 ## 2. Methodology
 
 **Data Source**  
-The dataset used in this analysis was provided through the Google Advanced Data Analytics Course on Coursera. It contains anonymized data on Waze users, including variables related to app usage, engagement, device type, and churn status.  
+The dataset used for this analysis was sourced from the Google Advanced Data Analytics Course on Coursera. It consists of anonymized data on 14,999 Waze users, covering 13 variables related to app usage, user engagement, device type, and churn status.  
 
 **Tools and Libraries**  
 • Python: The primary language used for data manipulation, cleaning, and analysis.  
@@ -36,36 +36,36 @@ The Waze Churn Analysis revealed several important behavioral trends:
 • **Retained users** demonstrate more consistent, but less intense, usage patterns.  
 • **Device type** does not appear to be a major factor in churn, with iPhone and Android users showing similar churn rates.  
 
-**Users with Missing Data**  
+**3.1. Users with Missing Data**  
 
 ![output_24_0](https://github.com/user-attachments/assets/cd679739-a692-479c-a3f0-135ae652f9b9)  
 
 The dataset contains 700 missing values in the churn label column, with a greater number of iPhone users (447) than Android users (253) affected.  
 
-**Device Proportions in Dataset vs. Missing Data**  
+**3.2. Device Proportions in Dataset vs. Missing Data**  
 
 ![output_30_0](https://github.com/user-attachments/assets/1b8b5ffb-6d19-4b1f-82d3-ff9e38b14667)  
 Both device types (iPhone and Android) have a similar distribution between the overall dataset and users with missing values, suggesting that missing data is not strongly biased towards one device type.
 
-**Churned vs. Retained Users**  
+**3.3. Churned vs. Retained Users**  
 
 ![output_34_0](https://github.com/user-attachments/assets/369b31b3-0eda-4990-8ce7-451b7c601a1c)  
 The majority of users are retained (82.3%), while 17.7% have churned. This suggests that churn is notable but not overwhelming.
 
-**Device Distribution for Churned vs. Retained Users**  
+**3.4. Device Distribution for Churned vs. Retained Users**  
 
 ![output_52_0](https://github.com/user-attachments/assets/72708ea5-5fe0-4584-ad6c-b38d9d89dc7c)  
 The device distribution between churned and retained users is almost identical, with iPhone users comprising approximately 65% of both groups. This indicates that device type alone is not a significant predictor of churn.
 
-**Median Values Comparison**  
+**3.5. Median Values Comparison**  
 
 ![output_37_0](https://github.com/user-attachments/assets/e1cc1243-f413-441b-ae49-6d065317a9b0)  
-Churned users exhibited more intense driving behavior, covering significantly longer distances and engaging in more drives per day. However, they used the app less consistently, engaging with Waze on fewer days than retained users. Retained users, on the other hand, exhibited a more balanced and consistent usage pattern, driving shorter distances and spending less time per drive, but using the app on more days throughout the month.
+Churned users demonstrated more intense driving behavior, covering significantly longer distances, with an average of 3,652.66 km driven compared to 3,464.68 km by retained users, and completing 164 drives per month versus 147.59 by retained users. Despite this, churned users engaged with Waze on fewer days, averaging 50 days of usage compared to the 56 days of retained users. Retained users, meanwhile, exhibited a more balanced and consistent usage pattern, driving shorter distances and spending less time per drive but using the app more frequently throughout the month.  
 
-**Kilometers and Drives per Driving Day**  
+**3.6. Kilometers and Drives per Driving Day**  
 
 ![output_46_0](https://github.com/user-attachments/assets/c34bfa57-145f-4f3b-83da-0d456c69a2b1)  
-Churned users had a higher number of drives per driving day, suggesting that their app usage was concentrated into fewer, more intense sessions. This pattern of behavior suggests that the sample of churned users may include a significant proportion of long-haul truckers, whose driving habits involve longer, more demanding trips that may not align with typical Waze user patterns.
+Churned users had a higher number of kilometers and drives per driving day, suggesting that their app usage was concentrated into fewer, more intense sessions. This pattern of behavior suggests that the sample of churned users may include a significant proportion of long-haul truckers, whose driving habits involve longer, more demanding trips that may not align with typical Waze user patterns.
 
 ### **Key Insights of User Behavior**  
 • **Churned vs. Retained Users**:   
