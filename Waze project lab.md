@@ -1512,5 +1512,3 @@ Driving Behavior: Churned users drove further and longer on the days they used t
 **6. Was there an appreciable difference in churn rate between iPhone users vs. Android users?**
 
 The churn rates are very similar between Android and iPhone users (approximately 18%), with iPhone users having a slightly higher churn rate. This difference is minimal, indicating that the churn rate is relatively consistent across device types.
-
-**Congratulations!** You've completed this lab. However, you may not notice a green check mark next to this item on Coursera's platform. Please continue your progress regardless of the check mark. Just click on the "save" icon at the top of this notebook to ensure your work has been logged.
