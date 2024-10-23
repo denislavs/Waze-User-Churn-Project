@@ -4,9 +4,7 @@
 # # **Waze Churn Analysis Project**
 # **Course 2 - Get Started with Python**
 
-
 # In[1]:
-
 
 # Import packages for data manipulation
 import pandas as pd
@@ -14,33 +12,24 @@ import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-
 # In[2]:
-
 
 # Load dataset into dataframe
 df = pd.read_csv('waze_dataset.csv')
 
-
 # ### **Summary information**
 
-
 # In[3]:
-
 
 # Display the First Few Rows: Get a quick overview of the data
 df.head(10)
 
-
 # In[4]:
-
 
 # Check Data Types: Ensure each column has the appropriate data type
 df.info()
 
-
 # In[11]:
-
 
 # Isolate rows with null values
 rows_with_nulls = df[df['label'].isnull()]
@@ -48,9 +37,7 @@ rows_with_nulls = df[df['label'].isnull()]
 # Display summary stats of rows with null values
 rows_with_nulls.describe()
 
-
 # In[12]:
-
 
 # Isolate rows without null values
 rows_without_nulls = df[df['label'].notnull()]
@@ -58,21 +45,15 @@ rows_without_nulls = df[df['label'].notnull()]
 # Display summary stats of rows without null values
 rows_without_nulls.describe()
 
-
 # ### **Null values - device counts**
-# 
-
 
 # In[49]:
-
 
 # Get count of null values by device
 null_counts_by_device = df[df['label'].isnull()].groupby('device').size()
 null_counts_by_device
 
-
 # In[4]:
-
 
 # Data
 devices = ['iPhone', 'Android']
@@ -90,9 +71,7 @@ plt.ylabel('Number of Users')
 # Display the plot
 plt.show()
 
-
 # In[78]:
-
 
 # Calculate % of iPhone nulls and Android nulls
 
@@ -103,18 +82,13 @@ rows_with_nulls = df[df['label'].isnull()]
 device_percentage_with_nulls = rows_with_nulls['device'].value_counts(normalize=True)
 device_percentage_with_nulls
 
-
-
 # In[79]:
-
 
 # Calculate % of iPhone users and Android users in full dataset
 device_percentage = df['device'].value_counts(normalize=True)
 device_percentage
 
-
 # In[4]:
-
 
 # Data
 devices = ['iPhone', 'Android']
@@ -136,9 +110,7 @@ plt.xticks(indices + bar_width / 2, devices)
 plt.legend()
 plt.show()
 
-
 # In[83]:
-
 
 # Calculate counts of churned vs. retained
 label_counts = df['label'].value_counts()
@@ -148,9 +120,7 @@ print('')
 label_percentages = df['label'].value_counts(normalize=True)
 print(label_percentages)
 
-
 # In[20]:
-
 
 # Data for the pie chart
 labels = ['Retained', 'Churned']
@@ -167,16 +137,12 @@ plt.title('Proportion of Retained vs. Churned Users')
 # Display the plot
 plt.show()
 
-
 # In[46]:
-
 
 # Calculate median values of all columns for churned and retained users
 df.groupby(['label']).median()
 
-
 # In[17]:
-
 
 # Data preparation
 labels = ['Sessions', 'Drives', 'Total Sessions', 'Days After Onboarding', 
@@ -213,9 +179,7 @@ for bar in bars2:
 plt.tight_layout()
 plt.show()
 
-
 # In[3]:
-
 
 # Add a column to df called `km_per_drive`
 df['km_per_drive'] = df['driven_km_drives'] / df['drives']
@@ -224,9 +188,7 @@ df['km_per_drive'] = df['driven_km_drives'] / df['drives']
 median_km_per_drive = df.groupby(['label']).median('km_per_drive')[['km_per_drive']]
 median_km_per_drive
 
-
 # In[4]:
-
 
 # Add a column to df called `km_per_driving_day`
 df['km_per_driving_day'] = df['driven_km_drives'] / df['driving_days']
@@ -235,9 +197,7 @@ df['km_per_driving_day'] = df['driven_km_drives'] / df['driving_days']
 median_km_per_drive = df.groupby(['label']).median('km_per_driving_day')[['km_per_driving_day']]
 median_km_per_drive
 
-
 # In[8]:
-
 
 # Add a column to df called `drives_per_driving_day`
 df['drives_per_driving_day'] = df['drives'] / df['driving_days']
@@ -246,17 +206,13 @@ df['drives_per_driving_day'] = df['drives'] / df['driving_days']
 median_km_per_drive = df.groupby(['label']).median('drives_per_driving_day')[['drives_per_driving_day']]
 median_km_per_drive
 
-
 # In[9]:
-
 
 # Group by `label`, calculate the median for both `km_per_driving_day` and `drives_per_driving_day`
 medians = df.groupby('label').aggregate({'km_per_driving_day': 'median', 'drives_per_driving_day': 'median'})
 medians
 
-
 # In[7]:
-
 
 # Data
 labels = ['Churned', 'Retained']
@@ -299,23 +255,17 @@ plt.tight_layout()
 # Show the plot
 plt.show()
 
-
 # In[77]:
-
 
 # For each label, calculate the number of Android users and iPhone users
 df.groupby(['label','device']).count()[['ID']]
 
-
 # In[90]:
-
 
 # For each label, calculate the percentage of Android users and iPhone users
 df.groupby('label')['device'].value_counts(normalize=True)
 
-
 # In[5]:
-
 
 # Data
 labels = ['iPhone', 'Android']
@@ -341,8 +291,6 @@ plt.tight_layout()
 
 # Show the plot
 plt.show()
-
-
 
 # **FINDINGS**
 # 

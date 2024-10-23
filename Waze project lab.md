@@ -1,22 +1,5 @@
 # **Waze Churn Analysis Project**
 
-Welcome to the Waze Project!
-
-Your Waze data analytics team is still in the early stages of their user churn project. Previously, you were asked to complete a project proposal by your supervisor, May Santner. You have received notice that your project proposal has been approved and that your team has been given access to Waze's user data. To get clear insights, the user data must be inspected and prepared for the upcoming process of exploratory data analysis (EDA).
-
-A Python notebook has been prepared to guide you through this project. Answer the questions and create an executive summary for the Waze data team.
-
-# **Inspect and analyze data**
-
-In this activity, you will examine data provided and prepare it for analysis. This activity will help ensure the information is,
-
-1.   Ready to answer questions and yield insights
-
-2.   Ready for visualizations
-
-3.   Ready for future hypothesis testing and statistical methods
-<br/>
-
 **The purpose** of this project is to investigate and understand the data provided.
 
 **The goal** is to use a dataframe contructed within Python, perform a cursory inspection of the provided dataset, and inform team members of your findings.
@@ -36,27 +19,7 @@ In this activity, you will examine data provided and prepare it for analysis. Th
 **Part 3:** Understand the variables
 
 * Use insights from your examination of the summary data to guide deeper investigation into variables
-
-
 <br/>
-
-Follow the instructions and answer the following questions to complete the activity. Then, you will complete an Executive Summary using the questions listed on the PACE Strategy Document.
-
-Be sure to complete this activity before moving on. The next course item will provide you with a completed exemplar to compare to your own work.
-
-
-
-# **Identify data types and compile summary information**
-
-
-<img src="images/Pace.png" width="100" height="100" align=left>
-
-# **PACE stages**
-
-Throughout these project notebooks, you'll see references to the problem-solving framework, PACE. The following notebook components are labeled with the respective PACE stages: Plan, Analyze, Construct, and Execute.
-
-<img src="images/Plan.png" width="100" height="100" align=left>
-
 
 ## **PACE: Plan**
 
@@ -65,7 +28,6 @@ Consider the questions in your PACE Strategy Document and those below to craft y
 ### **Task 1. Understand the situation**
 
 *   How can you best prepare to understand and organize the provided driver data?
-
 
 *Begin by exploring your dataset and consider reviewing the Data Dictionary.*
 
@@ -108,10 +70,7 @@ Consider the questions in your PACE Strategy Document to reflect on the Analyze 
 Start by importing the packages that you will need to load and explore the dataset. Make sure to use the following import statements:
 
 *   `import pandas as pd`
-
 *   `import numpy as np`
-
-
 
 ```python
 # Import packages for data manipulation
@@ -120,11 +79,9 @@ import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 ```
-
 Then, load the dataset into a dataframe. Creating a dataframe will help you conduct data manipulation, exploratory data analysis (EDA), and statistical activities.
 
-**Note:** As shown in this cell, the dataset has been automatically loaded in for you. You do not need to download the .csv file, or provide more code, in order to access the dataset and proceed with this lab. Please continue with this activity by completing the following instructions.
-
+**Note:** As shown in this cell, the dataset has been automatically loaded in. No need to download the .csv file, or provide more code, in order to access the dataset and proceed with this lab.
 
 ```python
 # Load dataset into dataframe
@@ -146,14 +103,10 @@ View and inspect summary information about the dataframe by **coding the followi
 
 3. Does the dataset have any missing values?
 
-
 ```python
 # Display the First Few Rows: Get a quick overview of the data
 df.head(10)
 ```
-
-
-
 
 <div>
 <style scoped>
@@ -353,9 +306,6 @@ df.head(10)
 </table>
 </div>
 
-
-
-
 ```python
 # Check Data Types: Ensure each column has the appropriate data type
 df.info()
@@ -382,7 +332,6 @@ df.info()
     dtypes: float64(3), int64(8), object(2)
     memory usage: 1.5+ MB
 
-
 **Task 2b**
 
 **Question 1** When reviewing the df.head() output, are there any variables that have missing values?
@@ -400,14 +349,11 @@ df.info()
 
     Yes, the dataset has missing values. Specifically, the label column has 700 missing values (14,299 non-null entries out of a total of 14,999 rows). All other columns have 14,999 non-null entries, so they do not contain any missing values.
     
-
 ### **Task 2c. Null values and summary statistics**
 
 Compare the summary statistics of the 700 rows that are missing labels with summary statistics of the rows that are not missing any values.
 
 **Question:** Is there a discernible difference between the two populations?
-
-
 
 ```python
 # Isolate rows with null values
@@ -416,9 +362,6 @@ rows_with_nulls = df[df['label'].isnull()]
 # Display summary stats of rows with null values
 rows_with_nulls.describe()
 ```
-
-
-
 
 <div>
 <style scoped>
@@ -568,9 +511,6 @@ rows_with_nulls.describe()
 </table>
 </div>
 
-
-
-
 ```python
 # Isolate rows without null values
 rows_without_nulls = df[df['label'].notnull()]
@@ -578,9 +518,6 @@ rows_without_nulls = df[df['label'].notnull()]
 # Display summary stats of rows without null values
 rows_without_nulls.describe()
 ```
-
-
-
 
 <div>
 <style scoped>
@@ -730,8 +667,6 @@ rows_without_nulls.describe()
 </table>
 </div>
 
-
-
 **Task 2c**
 
 **Question:** Is there a discernible difference between the two populations?
@@ -740,13 +675,11 @@ rows_without_nulls.describe()
     
     >>> Slight differences in the mean and maximum values for certain metrics (e.g., total_sessions, driven_km_drives) could be further explored to determine if they have any meaningful impact.
 
-
 ### **Task 2d. Null values - device counts**
 
 Next, check the two populations with respect to the `device` variable.
 
 **Question:** How many iPhone users had null values and how many Android users had null values?
-
 
 ```python
 # Get count of null values by device
@@ -761,9 +694,6 @@ null_counts_by_device
     Android    253
     iPhone     447
     dtype: int64
-
-
-
 
 ```python
 # Data
@@ -782,15 +712,11 @@ plt.ylabel('Number of Users')
 # Display the plot
 plt.show()
 ```
-
-
 ![png](output_24_0.png)
-
 
 **Answer**: 447 iPhone users and 253 Android users had null values.
 
 Now, of the rows with null values, calculate the percentage with each device&mdash;Android and iPhone. You can do this directly with the [`value_counts()`](https://pandas.pydata.org/docs/reference/api/pandas.Series.value_counts.html) function.
-
 
 ```python
 # Calculate % of iPhone nulls and Android nulls
@@ -810,10 +736,7 @@ device_percentage_with_nulls
     Android    0.361429
     Name: device, dtype: float64
 
-
-
 How does this compare to the device ratio in the full dataset?
-
 
 ```python
 # Calculate % of iPhone users and Android users in full dataset
@@ -827,9 +750,6 @@ device_percentage
     iPhone     0.644843
     Android    0.355157
     Name: device, dtype: float64
-
-
-
 
 ```python
 # Data
@@ -853,16 +773,13 @@ plt.legend()
 plt.show()
 ```
 
-
 ![png](output_30_0.png)
-
 
 The percentage of missing values by each device is consistent with their representation in the data overall.
 
 There is nothing to suggest a non-random cause of the missing data.
 
 Examine the counts and percentages of users who churned vs. those who were retained. How many of each group are represented in the data?
-
 
 ```python
 # Calculate counts of churned vs. retained
@@ -900,23 +817,16 @@ plt.title('Proportion of Retained vs. Churned Users')
 # Display the plot
 plt.show()
 ```
-
-
 ![png](output_34_0.png)
-
 
 This dataset contains 82% retained users and 18% churned users.
 
 Next, compare the medians of each variable for churned and retained users. The reason for calculating the median and not the mean is that you don't want outliers to unduly affect the portrayal of a typical user. Notice, for example, that the maximum value in the `driven_km_drives` column is 21,183 km. That's more than half the circumference of the earth!
 
-
 ```python
 # Calculate median values of all columns for churned and retained users
 df.groupby(['label']).median()
 ```
-
-
-
 
 <div>
 <style scoped>
@@ -996,9 +906,6 @@ df.groupby(['label']).median()
 </table>
 </div>
 
-
-
-
 ```python
 # Data preparation
 labels = ['Sessions', 'Drives', 'Total Sessions', 'Days After Onboarding', 
@@ -1036,9 +943,7 @@ plt.tight_layout()
 plt.show()
 ```
 
-
 ![png](output_37_0.png)
-
 
 This offers an interesting snapshot of the two groups, churned vs. retained:
 
@@ -1052,7 +957,6 @@ Calculate the median kilometers per drive in the last month for both retained an
 
 Begin by dividing the `driven_km_drives` column by the `drives` column. Then, group the results by churned/retained and calculate the median km/drive of each group.
 
-
 ```python
 # Add a column to df called `km_per_drive`
 df['km_per_drive'] = df['driven_km_drives'] / df['drives']
@@ -1061,9 +965,6 @@ df['km_per_drive'] = df['driven_km_drives'] / df['drives']
 median_km_per_drive = df.groupby(['label']).median('km_per_drive')[['km_per_drive']]
 median_km_per_drive
 ```
-
-
-
 
 <div>
 <style scoped>
@@ -1103,12 +1004,9 @@ median_km_per_drive
 </table>
 </div>
 
-
-
 The median retained user drove about one more kilometer per drive than the median churned user. How many kilometers per driving day was this?
 
 To calculate this statistic, repeat the steps above using `driving_days` instead of `drives`.
-
 
 ```python
 # Add a column to df called `km_per_driving_day`
@@ -1119,9 +1017,6 @@ median_km_per_drive = df.groupby(['label']).median('km_per_driving_day')[['km_pe
 median_km_per_drive
 ```
 
-
-
-
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -1160,10 +1055,7 @@ median_km_per_drive
 </table>
 </div>
 
-
-
 Now, calculate the median number of drives per driving day for each group.
-
 
 ```python
 # Add a column to df called `drives_per_driving_day`
@@ -1174,9 +1066,6 @@ median_km_per_drive = df.groupby(['label']).median('drives_per_driving_day')[['d
 median_km_per_drive
 ```
 
-
-
-
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -1215,17 +1104,11 @@ median_km_per_drive
 </table>
 </div>
 
-
-
-
 ```python
 # Group by `label`, calculate the median for both `km_per_driving_day` and `drives_per_driving_day`
 medians = df.groupby('label').aggregate({'km_per_driving_day': 'median', 'drives_per_driving_day': 'median'})
 medians
 ```
-
-
-
 
 <div>
 <style scoped>
@@ -1268,9 +1151,6 @@ medians
   </tbody>
 </table>
 </div>
-
-
-
 
 ```python
 # Data
@@ -1315,9 +1195,7 @@ plt.tight_layout()
 plt.show()
 ```
 
-
 ![png](output_46_0.png)
-
 
 The median user who churned drove 698 kilometers each day they drove last month, which is almost ~240% the per-drive-day distance of retained users. The median churned user had a similarly disproporionate number of drives per drive day compared to retained users.
 
@@ -1329,14 +1207,10 @@ Finally, examine whether there is an imbalance in how many users churned by devi
 
 Begin by getting the overall counts of each device type for each group, churned and retained.
 
-
 ```python
 # For each label, calculate the number of Android users and iPhone users
 df.groupby(['label','device']).count()[['ID']]
 ```
-
-
-
 
 <div>
 <style scoped>
@@ -1388,10 +1262,7 @@ df.groupby(['label','device']).count()[['ID']]
 </table>
 </div>
 
-
-
 Now, within each group, churned and retained, calculate what percent was Android and what percent was iPhone.
-
 
 ```python
 # For each label, calculate the percentage of Android users and iPhone users
@@ -1407,9 +1278,6 @@ df.groupby('label')['device'].value_counts(normalize=True)
     retained  iPhone     0.644393
               Android    0.355607
     Name: device, dtype: float64
-
-
-
 
 ```python
 # Data
@@ -1438,9 +1306,7 @@ plt.tight_layout()
 plt.show()
 ```
 
-
 ![png](output_52_0.png)
-
 
 The ratio of iPhone users and Android users is consistent between the churned group and the retained group, and those ratios are both consistent with the ratio found in the overall dataset.
 
@@ -1449,7 +1315,6 @@ The ratio of iPhone users and Android users is consistent between the churned gr
 ## **PACE: Construct**
 
 **Note**: The Construct stage does not apply to this workflow. The PACE framework can be adapted to fit the specific requirements of any project.
-
 
 
 <img src="images/Execute.png" width="100" height="100" align=left>
@@ -1475,10 +1340,6 @@ Recall that your supervisor, May Santer, asked you to share your findings with t
 5. What were some distinguishing characteristics of users who churned vs. users who were retained?
 
 6. Was there an appreciable difference in churn rate between iPhone users vs. Android users?
-
-
-
-
 
 **CONCLUSION**
 
